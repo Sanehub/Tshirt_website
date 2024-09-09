@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>T-Shirt Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="products">
+            <div class="container">
+                <h2>Our Products</h2>
+                <div class="product-list">
+                    {% for tshirt in tshirts %}
+                    <div class="product-card">
+                        <img src="{{ tshirt.image.url }}" alt="{{ tshirt.name }}">
+                        <h3>{{ tshirt.name }}</h3>
+                        <p>{{ tshirt.description }}</p>
+                        <p class="price">${{ tshirt.price }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 T-Shirt Store. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>T-Shirt Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Welcome to the T-Shirt Store! We offer a range of unique and stylish t-shirts designed to make you
+                    stand out. Our mission is to provide high-quality apparel that reflects your personality.</p>
+                <p>Our team is passionate about fashion and committed to bringing you the best designs. Thank you for
+                    visiting our store!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 T-Shirt Store. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
